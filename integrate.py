@@ -1,7 +1,16 @@
+import sys
+
 import cv2
 import numpy as np
 
-cam = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+
+def open_camera(index=0):
+    if sys.platform == "win32":
+        return cv2.VideoCapture(index, cv2.CAP_DSHOW)
+    return cv2.VideoCapture(index)
+
+
+cam = open_camera(0)
 
 cam.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)

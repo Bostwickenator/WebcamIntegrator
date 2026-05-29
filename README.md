@@ -18,16 +18,15 @@ After **100** integrated frames, the result is saved as a PNG in the working dir
 ## Requirements
 
 - Python 3
-- [OpenCV](https://opencv.org/) (`opencv-python`)
-- [NumPy](https://numpy.org/)
+- Dependencies listed in `requirements.txt` ([OpenCV](https://opencv.org/), [NumPy](https://numpy.org/))
 
 ## Installation
 
 ```bash
-pip install opencv-python numpy
+pip install -r requirements.txt
 ```
 
-Clone the repository (or download `integrate.py`), then run from the project directory.
+Clone the repository, then run from the project directory.
 
 ## Usage
 
@@ -58,13 +57,7 @@ To change resolution, uncomment or edit the `CAP_PROP_FRAME_WIDTH` / `CAP_PROP_F
 
 ## Platform notes
 
-The script uses `cv2.CAP_DSHOW` (DirectShow), which is intended for **Windows**. On Linux or macOS, remove the backend flag or use the appropriate capture API for your system:
-
-```python
-cam = cv2.VideoCapture(0)  # Linux / macOS
-```
-
-You need a display attached for the OpenCV GUI windows (`imshow`).
+On Windows, the script opens the camera with DirectShow (`CAP_DSHOW`); on other platforms it uses OpenCV’s default backend. You need a display attached for the OpenCV GUI windows (`imshow`).
 
 ## License
 
