@@ -61,4 +61,4 @@ On Windows, the script opens the camera with DirectShow (`CAP_DSHOW`); on other 
 
 ## License
 
-No license file is included in this repository. Contact the maintainer for usage terms if you plan to redistribute or modify the project.
+This project is licensed under the [MIT License](LICENSE).
